@@ -8,8 +8,8 @@ const [articles, setArticles] = useState([])
 useEffect(() => {
   fetchArticles()
   .then((data) => {
-    const newArticles = data.results.map((result, index) => ({
-      ...result, 
+    const newArticles = data.results.map((info, index) => ({
+      ...info, 
       id: index
     }))
     setArticles(newArticles)
