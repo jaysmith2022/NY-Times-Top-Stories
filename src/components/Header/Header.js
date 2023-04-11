@@ -10,7 +10,7 @@ export const Header = () => {
                 src={logo}
                 alt="new york times logo"
                 ></img>
-                <h1 className="main-page-title">Top Stories</h1>
+                <h1 className="main-page-title">Today's Top Stories</h1>
             </div>
         </header>
     )

@@ -5,9 +5,11 @@ import ArticleContainer from '../ArticleContainer/ArticleContainer';
 import { Header } from '../Header/Header';
 import { Switch, Route } from 'react-router-dom';
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
+import { ArticleFilter } from '../ArticleFilter/ArticleFilter';
 
 function App() {
   const [articles, setArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState([]);
 
   useEffect(() => {
     fetchArticles().then((data) => {
@@ -16,8 +18,16 @@ function App() {
         id: index
       }));
       setArticles(newArticles);
+      setFilteredArticles(newArticles);
     });
   }, []);
+
+  const handleSearch = (searchTerm) => {
+    const filtered = articles.filter((article) => {
+      return article.title.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setFilteredArticles(filtered);
+  };
 
   const getSingleArticle = (id) => {
     return articles.find((article) => {
@@ -27,10 +37,11 @@ function App() {
 
   return (
     <main>
-        <Header />
+      <Header />
       <Switch>
         <Route exact path="/" className="App">
-          <ArticleContainer articles={articles} />
+          <ArticleFilter onSearch={handleSearch} />
+          <ArticleContainer articles={filteredArticles} />
         </Route>
         <Route
           exact
