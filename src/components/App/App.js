@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { fetchArticles } from '../../apicalls';
 import ArticleContainer from '../ArticleContainer/ArticleContainer';
+import { Header } from '../Header/Header';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -17,9 +18,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <ArticleContainer articles={articles} />
-    </div>
+    <main>
+      <Header />
+      <div className="App">
+        <ArticleContainer articles={articles} />
+      </div>
+    </main>
   );
 }
 

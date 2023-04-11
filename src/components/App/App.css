@@ -57,7 +57,32 @@
   width: 100%;
 }
 
+button {
+  cursor: pointer;
+}
+
 .para-wrapper,
 .details-wrapper {
   width: 100%;
+}
+
+
+.header {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.header img {
+  height: 100%;
+  object-fit: none;
+  width: 100%;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
 }
