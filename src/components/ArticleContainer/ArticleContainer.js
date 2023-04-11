@@ -8,7 +8,7 @@ function ArticleContainer({ articles }){
             <ArticleCard 
             id={article.id}
             title={article.title}
-            media={article.media?.[0]?.url || ''}
+            media={article.multimedia?.[0]?.url || ''}
             section={article.section}
             url={article.url}
             key={article.id}

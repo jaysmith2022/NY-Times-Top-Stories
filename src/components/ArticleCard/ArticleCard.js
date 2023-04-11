@@ -5,16 +5,24 @@ import { Link } from 'react-router-dom';
 function ArticleCard({ id, title, media, section, url }) {
   return (
     <div className="article-card">
-      <h2>{title}</h2>
-      {media && <img src={media} alt={`${title} image`} />}
-      <p>{section}</p>
-      <div className="article-buttons">
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <button>Go to Article</button>
-        </a>
-        <Link to={`/article/details/${id}`}>
-          <button>Learn More</button>
-        </Link>
+      <div className="image-container">
+        <img src={media} alt={`${title} image`} />
+      </div>
+      <div className="article-details">
+        <h3>{title}</h3>
+        <div className='details-wrapper'>
+            <div className='para-wrapper'>
+                <p>{section}</p>
+            </div>
+            <div className="article-buttons">
+            <a href={url} target="_blank" rel="noopener noreferrer">
+                <button>Go to Article</button>
+            </a>
+            <Link to={`/article/details/${id}`}>
+                <button>Learn More</button>
+            </Link>
+            </div>
+        </div>
       </div>
     </div>
   );
