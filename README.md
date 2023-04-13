@@ -64,7 +64,7 @@ This was a take home project assigned from the Turing School of Software and Des
 ## GETTING STARTED
 
 ### Installation
-## To use the deployed app visit: <a href="" target="_blank"></a>
+## To use the deployed app visit: <a href="https://nytimes-six.vercel.app/" target="_blank">NY Times Top Stories</a>
 1. Fork the Repo from the [Repository](https://github.com/jaysmith2022/NY-Times-Top-Stories)
 2. Clone the repo
    ```sh
